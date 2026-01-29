@@ -2,6 +2,10 @@ const query = document.querySelector('header.search input')
 const search = document.querySelector('header.search button')
 const cards = document.querySelector('section.cards')
 
+const generateCard = (img, label, category, area, link, ingredients) => {
+
+}
+
 const extractIngredients = (meal) => {
     const ingredients = [];
 
@@ -27,6 +31,21 @@ const handleSearch = async () => {
             cards.innerHTML = "<p>No Recipies Found</p>"
             return
         }
+
+        data.meals.forEach(meal => {
+            const ingredients = extractIngredients(meal);
+            const ele = document.createElement("div");
+            ele.classList.add("recipe-card");
+            ele.innerHTML = generateCard(
+                meal.strMealThumb,
+                meal.strMeal,
+                meal.strMealCategory,
+                meal.strArea,
+                meal.strYoutube || meal.strSource || "#",
+                ingredients
+            )
+            cards.appendChild(ele);
+        });
     }
     catch (error) {
         console.log(error);
