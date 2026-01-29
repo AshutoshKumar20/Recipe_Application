@@ -2,7 +2,6 @@ const query = document.querySelector('header.search input')
 const search = document.querySelector('header.search button')
 const cards = document.querySelector('section.cards')
 
-// `https://www.themealdb.com/api/json/v1/1/search.php?s=${query.value}`
 const extractIngredients = (meal) => {
     const ingredients = [];
 
@@ -16,3 +15,22 @@ const extractIngredients = (meal) => {
     }
     return ingredients;
 }
+
+const handleSearch = async () => {
+    cards.innerHTML = "";
+    try {
+        const endpoint = `https://www.themealdb.com/api/json/v1/1/search.php?s=${query.value}`;
+        const response = await fetch(endpoint);
+        const data = await response.json();
+
+        if (!data.meals) {
+            cards.innerHTML = "<p>No Recipies Found</p>"
+            return
+        }
+    }
+    catch (error) {
+        console.log(error);
+    };
+
+}
+search.addEventListener("click", handleSearch);
