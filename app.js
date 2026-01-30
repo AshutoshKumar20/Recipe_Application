@@ -10,6 +10,23 @@ const generateCard = (image, label, category, area, link, ingredients) =>
         <span class="icon icon-play"></span>
         </a>
     </aside>
+
+    <article>
+    <h2>${label}</h2>
+    <h3>${category} ${area}</h3>
+
+    <ul>
+    <li><span class="icon icon-clock"></span><span>N/A</span></li>
+    <li><span class="icon icon-level"></span><span>Beginner</span></li>
+    </ul>
+
+    <p class="ingredients">
+    <span>Ingredients: </span>
+    <ul>
+    ${ingredients.map(i => `<li>${i}</li>`).join("")}
+    </ul>
+    </p>
+    </article>
 `
 
 const extractIngredients = (meal) => {
