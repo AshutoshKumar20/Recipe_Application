@@ -2,9 +2,15 @@ const query = document.querySelector('header.search input')
 const search = document.querySelector('header.search button')
 const cards = document.querySelector('section.cards')
 
-const generateCard = (img, label, category, area, link, ingredients) => {
-
-}
+const generateCard = (image, label, category, area, link, ingredients) =>
+    `
+    <aside>
+        <img src=${image} alt=${label}/>
+        <a href=${link} class="button" target="_blank">
+        <span class="icon icon-play"></span>
+        </a>
+    </aside>
+`
 
 const extractIngredients = (meal) => {
     const ingredients = [];
