@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background-color: beige;
+}
+
+img {
+    max-width: 100%;
+}
