@@ -58,7 +58,7 @@ const handleSearch = async () => {
         data.meals.forEach(meal => {
             const ingredients = extractIngredients(meal);
             const ele = document.createElement("div");
-            ele.classList.add("recipe-card");
+            ele.classList.add("recipie-card");
             ele.innerHTML = generateCard(
                 meal.strMealThumb,
                 meal.strMeal,

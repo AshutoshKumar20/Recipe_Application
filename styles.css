@@ -14,16 +14,40 @@ body {
     /* 1rem = 16px */
 }
 
-.recipies {
+.recipie-card {
     background-color: #fff;
     display: inline-block;
     margin: 30px;
-    width: 300px;
+    width: 380px;
     max-width: 490px;
     height: 500px;
     overflow-y: scroll;
-    border-top-left-radius: 5px;
+
+    /* border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     border-bottom-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+    border-bottom-left-radius: 5px; */
+}
+
+.recipie-card aside {
+    position: relative;
+}
+
+.recipie-card aside img {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.recipie-card aside button {
+    background: #57abf2;
+    display: inline-block;
+    position: absolute;
+    top: 80%;
+}
+
+.recipe-card .icon {
+    display: inline;
+    display: inline-block;
+    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/203277/recipe-card-icons.svg);
+    background-repeat: no-repeat;
 }
