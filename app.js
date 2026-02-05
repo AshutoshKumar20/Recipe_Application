@@ -2,7 +2,7 @@ const query = document.querySelector('header.search input')
 const search = document.querySelector('header.search button')
 const cards = document.querySelector('section.cards')
 
-const generateCard = (image, label, category, area, link, ingredients) =>
+const generateCard = (image, label, area, link, ingredients) =>
     `
     <aside>
         <img src=${image} alt=${label}/>
@@ -13,12 +13,7 @@ const generateCard = (image, label, category, area, link, ingredients) =>
 
     <article>
     <h2>${label}</h2>
-    <h3>${category} ${area}</h3>
-
-    <ul>
-    <li><span class="icon icon-clock"></span><span>N/A</span></li>
-    <li><span class="icon icon-level"></span><span>Beginner</span></li>
-    </ul>
+    <h3> ${area}</h3>
 
     <p class="ingredients">
     <span>Ingredients: </span>
@@ -48,21 +43,25 @@ const handleSearch = async () => {
     try {
         const endpoint = `https://www.themealdb.com/api/json/v1/1/search.php?s=${query.value}`;
         const response = await fetch(endpoint);
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
         const data = await response.json();
 
         if (!data.meals) {
-            cards.innerHTML = "<p>No Recipies Found</p>"
+            cards.innerHTML = "<p>No Recipes Found</p>"
             return
         }
 
         data.meals.forEach(meal => {
             const ingredients = extractIngredients(meal);
             const ele = document.createElement("div");
-            ele.classList.add("recipie-card");
+            ele.classList.add("recipe-card");
             ele.innerHTML = generateCard(
                 meal.strMealThumb,
                 meal.strMeal,
-                meal.strMealCategory,
                 meal.strArea,
                 meal.strYoutube || meal.strSource || "#",
                 ingredients
