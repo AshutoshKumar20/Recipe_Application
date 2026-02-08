@@ -1,2 +1,2 @@
 # Recipe_Application
-An application which shows the recipes of the dishes you want.
+A Recipe Application which searches recipes based on your choice across the internet and provides you the direct link of that recipe with the ingredients include on the application
