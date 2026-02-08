@@ -7,7 +7,9 @@ const generateCard = (image, label, area, link, ingredients) =>
     <aside>
         <img src=${image} alt=${label}/>
         <a href=${link} class="button" target="_blank">
-        <span class="icon icon-play"></span>
+        <svg viewBox="0 0 24 24" width="24" height="24">
+        <polygon points="8,5 19,12 8,19" fill="white"></polygon>
+        </svg>
         </a>
     </aside>
 
