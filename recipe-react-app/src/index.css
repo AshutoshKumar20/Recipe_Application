@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@400;500&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #f5f5f0;
+  min-height: 100vh;
+}
+
+.navbar {
+  padding: 1.2rem 2rem;
+  background: white;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+}
+
+.logo span {
+  color: #D85A30;
+}
+
+.hero {
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+  background: white;
+  border-bottom: 1px solid #eee;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 5vw, 48px);
+  line-height: 1.15;
+  margin-bottom: 0.5rem;
+}
+
+.hero h1 em {
+  color: #D85A30;
+  font-style: italic;
+}
+
+.hero p {
+  color: #888;
+  font-size: 15px;
+  margin-bottom: 2rem;
+}
+
+.search-box {
+  display: flex;
+  gap: 8px;
+  max-width: 520px;
+  margin: 0 auto;
+  background: #f5f5f0;
+  border: 1px solid #ddd;
+  border-radius: 40px;
+  padding: 6px 6px 6px 20px;
+  align-items: center;
+}
+
+.search-box input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 15px;
+  outline: none;
+}
+
+.search-btn {
+  background: #D85A30;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 22px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.search-btn:hover {
+  background: #993C1D;
+}
+
+.search-btn:disabled {
+  background: #bbb;
+  cursor: not-allowed;
+}
+
+.chips {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.2rem;
+}
+
+.chip {
+  font-size: 12px;
+  padding: 5px 14px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  background: white;
+  transition: all 0.15s;
+}
+
+.chip:hover {
+  border-color: #D85A30;
+  color: #D85A30;
+}
+
+.results-section {
+  padding: 2rem 1.5rem;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  border: 1px solid #eee;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card-img-wrap {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+}
+
+.card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.55);
+  color: white;
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+.play-btn {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #D85A30;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  margin-bottom: 4px;
+}
+
+.area-badge {
+  font-size: 11px;
+  background: #FAECE7;
+  color: #993C1D;
+  padding: 2px 8px;
+  border-radius: 10px;
+  display: inline-block;
+  margin-bottom: 0.8rem;
+}
+
+.ing-label {
+  font-size: 11px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.tag {
+  font-size: 11px;
+  background: #f5f5f0;
+  color: #666;
+  padding: 3px 9px;
+  border-radius: 10px;
+  border: 1px solid #eee;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 4rem 1rem;
+  color: #888;
+}
+
+.empty-state h3 {
+  font-size: 17px;
+  color: #333;
+  margin: 1rem 0 0.4rem;
+}
+
+.loading {
+  text-align: center;
+  padding: 3rem;
+  color: #888;
+}
